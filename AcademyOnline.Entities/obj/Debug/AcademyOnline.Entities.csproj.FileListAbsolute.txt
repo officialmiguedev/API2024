@@ -1,0 +1,12 @@
+E:\Biblioteca\Escritorio\Proyectos\AcademyOnline\AcademyOnline.Entities\bin\Debug\AcademyOnline.Entities.dll
+E:\Biblioteca\Escritorio\Proyectos\AcademyOnline\AcademyOnline.Entities\bin\Debug\AcademyOnline.Entities.pdb
+E:\Biblioteca\Escritorio\Proyectos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.csproj.AssemblyReference.cache
+E:\Biblioteca\Escritorio\Proyectos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.csproj.CoreCompileInputs.cache
+E:\Biblioteca\Escritorio\Proyectos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.dll
+E:\Biblioteca\Escritorio\Proyectos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.pdb
+C:\Users\Administrator\source\repos\AcademyOnline\AcademyOnline.Entities\bin\Debug\AcademyOnline.Entities.dll
+C:\Users\Administrator\source\repos\AcademyOnline\AcademyOnline.Entities\bin\Debug\AcademyOnline.Entities.pdb
+C:\Users\Administrator\source\repos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.dll
+C:\Users\Administrator\source\repos\AcademyOnline\AcademyOnline.Entities\obj\Debug\AcademyOnline.Entities.pdb

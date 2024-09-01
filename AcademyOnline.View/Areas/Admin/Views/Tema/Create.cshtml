@@ -1,0 +1,89 @@
+﻿@model List<AcademyOnline.Entities.Tema>
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    //int cursoid = Model[0].CursoId;
+    int t = 0;
+    int l = 1;
+}
+
+<h2>Curso: @ViewBag.nombreCurso</h2>
+
+<div class="row frm-align">
+    <div class="col-6">
+        <div class="boxform-align">
+            <h4></h4>
+            <div class="img">
+                <div id="uploadForm">
+
+                </div>
+            </div>
+        </div>
+        <div class="boxform-align">
+            <h3>Nuevo tema</h3>
+            <form action="~/Admin/Tema/Create" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <input type="text" name="Nombre" value="" placeholder="Nombre tema" class="form-control" required />
+                </div>
+                <input type="hidden" name="CursoId" value="@ViewBag.cursoID" />
+                <div class="form-group">
+                    <input type="submit" name="" value="Save" class="btn btn-primary" />
+                    <a href="~/Admin/Tema/Index" class="btn btn-primary"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="text-primary">Nueva Lección</h3>
+        </div>
+        <div class="panel-body">
+            <form action="~/Admin/Leccion/Create" method="post">
+
+                <div class="form-group">
+                    <label>Temario</label>
+                    @Html.DropDownList("TemaId", (SelectList)ViewBag.Temarios, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Nombre Leccion</label>
+                    <input type="text" name="Nombre" class="form-control">
+                </div>
+                <input type="hidden" name="CursoId" value="@ViewBag.cursoID" />
+                <input type="hidden" name="NombreCurso" value="@ViewBag.nombreCurso" />
+                <div class="form-group">
+                    <input type="submit" class="form-control bt btn-primary" value="Guardar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="Detalles">
+    <div class="temarios">
+        <div>
+            <h3 class="h3">Temarios</h3>
+            @foreach (var tema in ViewBag.temas)
+            {
+                <ul class="list-group">
+                    <li class="list-group-item active">@tema.Nombre</li>
+                    @foreach (var lecciones in ViewBag.Lecciones)
+                    {
+                        if (tema.TemaId == lecciones.TemaId)
+                        {
+                            <li class="list-group-item">Leccion @(l++): @lecciones.Nombre</li>
+                        }
+                    }
+                </ul>
+                l = 1;
+            }
+        </div>
+    </div>
+    <div class="instructor">
+
+    </div>
+</div>

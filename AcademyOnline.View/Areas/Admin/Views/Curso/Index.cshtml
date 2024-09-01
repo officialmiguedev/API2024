@@ -1,0 +1,48 @@
+﻿@model List<AcademyOnline.Entities.Curso>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index Cursos</h2>
+
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="~/Admin/Curso/Create" class="btn btn-primary">Nuevo</a>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CursoId</td>
+                                <td>@item.Nombre</td>
+                                <td>
+                                    <!--<a href="~/Admin/Tema/Create/item.CursoId" class="btn btn-success">Agregar Temas y Lecciones</a> -->
+                                    @Html.ActionLink("Agregar Temas y Lecciones", "Create","Tema", new {id = item.CursoId, nombre = item.Nombre} ,new {@class= "btn btn-success" })
+                                    <a href="~/Admin/Curso/Edit/@item.CursoId" class="btn btn-warning">Editar</a>
+                                    <a href="~/Admin/Curso/Delete/@item.CursoId" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

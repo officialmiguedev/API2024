@@ -1,0 +1,45 @@
+﻿@model AcademyOnline.Entities.Instructor
+@{
+    ViewBag.Title = "Edit";
+    // Model.CategoryId = 0;
+    //Model.BrandId = 0;
+}
+
+<h2>Editar instructor</h2>
+
+<div class="row">
+    <div class="col-6">
+        <form action="/Instructor/edit" method="post">
+            <h3>ID: @Model.InstructorId</h3>
+            <div>
+                <img src="~/Image/Instructor/@Model.ImagePath" width="25%" class="form-group" />
+            </div>
+            <div>
+                <input type="hidden" name="ProductId" value="@Model.InstructorId" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="Nombre" class="form-control" value="@Model.Nombre" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="SobreMi" value="@Model.SobreMi" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="YouTube" value="@Model.Youtube" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="Twitter" value="@Model.Twitter" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="Linkedln" value="@Model.Linkedln" class="form-control" required />
+            </div>
+            
+            <!-- <div class="form-group">
+    <input type="file" name="ImagePath" value="" class="form-control" required />
+        </div> -->
+            <div class="form-group">
+                <input type="submit" name="Save" value="Save" class="btn btn-primary" />
+                <a href="/Instructor/Index" class="btn btn-primary"><i class="fa-solid fa-reply"></i></a>
+            </div>
+        </form>
+    </div>
+</div>

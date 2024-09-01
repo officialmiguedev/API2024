@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "DetallesCurso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int t = 0;
+    int l = 1;
+}
+
+<h2>Detalles del curso</h2>
+
+<div class="banner-curso">
+    <div class="img-curso">
+        <img src="~/Areas/Images/Cursos/@ViewBag.entity.ImagePath" width="100%"  height="100%" class="img-detalles"/>
+    </div>
+    <div class="descripcion">
+        <div class="nombre-curso">
+            <h2 class="titulo-curso">Curso de @ViewBag.entity.Nombre</h2>
+            <h4>Descripción:</h4>
+            <h4>@ViewBag.entity.Descripcion</h4>
+            <h3 class="titulo-curso">$@ViewBag.entity.Precio</h3>
+        </div>
+    </div>
+</div>
+<div class="Detalles">
+    <div class="temarios">
+        <div>
+            <h3 class="h3">Temarios</h3>
+            @foreach (var tema in ViewBag.temas)
+            {
+                <ul class="list-group">
+                    <li class="list-group-item active">@tema.Nombre</li>
+                    @foreach (var lecciones in ViewBag.Lecciones)
+                    {
+                        if (tema.TemaId == lecciones.TemaId)
+                        {
+                            <li class="list-group-item">Leccion @(l++): @lecciones.Nombre</li>
+                        }
+                    }
+                </ul>
+                l = 1;
+            }
+        </div>
+    </div>
+    <div class="instructor">
+
+    </div>
+</div>

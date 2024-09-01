@@ -1,0 +1,51 @@
+﻿@model List<AcademyOnline.Entities.Instructor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index Instructores</h2>
+
+
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="~/Admin/Instructor/Create" class="btn btn-primary">Nuevo</a>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.InstructorId</td>
+                                <td>@item.Nombres</td>
+                                <td>
+                                    <img src="~/Areas/Images/Instructor/@item.ImagePath" height="150px" />
+                                </td>
+                                <td>
+                                    <a href="~/Admin/Instructor/Edit/@item.InstructorId" class="btn btn-success">Editar</a>
+                                    <a href="~/Admin/Instructor/Delete/@item.InstructorId" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

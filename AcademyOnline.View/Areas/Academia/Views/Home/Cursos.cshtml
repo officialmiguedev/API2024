@@ -1,0 +1,30 @@
+﻿@model List<AcademyOnline.Entities.Curso>
+@{
+    ViewBag.Title = "Cursos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cursos</h2>
+
+<section>
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 border-primary" style="max-width: 20rem">
+                        <img class="card-img-top" src="~/Areas/Images/Cursos/@item.ImagePath" asp-append-version="true" width="100%">
+                        <div class="card-body">
+                            <h4 class="card-title">@item.Nombre</h4>
+                            <h5 class="card-title"></h5>
+
+                            <h4 class="card-title precio">$@item.Precio</h4>
+
+                            @Html.ActionLink("Ver", "DetallesCurso", new { id = item.CursoId }, new { @class = "btn btn-danger btn-active" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

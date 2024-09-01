@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="row frm-align">
+    <h2 class="text-center">Create New Category</h2>
+    <div class="col-6">
+        <div class="boxform-align">
+            <h4>Image</h4>
+            <div class="img">
+                <div id="uploadForm">
+
+                </div>
+            </div>
+        </div>
+        <div class="boxform-align">
+            <form action="/Categoria/Create" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <input type="text" name="nombre" value="" placeholder="Nombre" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <input type="file" accept=".jpg,.jpge" name="ImagePath" value="" class="form-control" required id="file" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="" value="Save" class="btn btn-primary" />
+                    <a href="/Categoria/Index" class="btn btn-primary"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function filePreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#uploadForm + img').remove();
+                    $('#uploadForm').after('<img src="' + e.target.result + '" width="200" height="200" class="imgPreview"/>');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#file").change(function () {
+            filePreview(this);
+        });
+    </script>
+}

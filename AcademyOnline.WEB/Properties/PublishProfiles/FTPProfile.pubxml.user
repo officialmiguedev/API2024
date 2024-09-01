@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://155.254.244.39/www.miguel503.somee.com</_PublishTargetUrl>
+    <History>False|2022-12-01T22:39:46.3730727Z;False|2022-12-01T16:35:35.6152565-06:00;</History>
+  </PropertyGroup>
+</Project>

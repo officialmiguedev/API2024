@@ -1,0 +1,31 @@
+﻿@model AcademyOnline.Entities.Leccion
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar lección</h2>
+
+<div class="row">
+    <div class="col-6">
+        <div class="boxform-align">
+            <form action="/Leccion/Edit" method="post">
+                <h3>ID: @Model.LeccionId</h3>
+
+                <div class="form-group">
+                    <input type="text" name="Nombre" class="form-control" value="@Model.Nombre" />
+                </div>
+                <div class="form-group">
+                    <label>Tema</label>
+                    @Html.DropDownList("TemaId", (SelectList)ViewBag.temas, new { @class = "form-control" })
+                </div>
+                <div>
+                    <input type="hidden" name="LeccionId" value="@Model.LeccionId" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="" value="Save" class="btn btn-primary" />
+                    <a href="/Leccion/Index" class="btn btn-primary"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

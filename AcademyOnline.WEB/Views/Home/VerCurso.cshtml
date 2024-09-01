@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "VerCurso";
+    int t = 0;
+    int l = 1;
+}
+
+<h2>Curso</h2>
+<div class="banner-curso">
+    <div class="img-curso">
+        <img src="~/Images/Cursos/@ViewBag.entity.ImagePath" width="80%"/>
+    </div>
+    <div class="descripcion">
+        <div class="nombre-curso">
+            <h2>Curso de @ViewBag.entity.Nombre</h2>
+            <h3>$</h3>
+        </div>
+    </div>
+</div>
+<div class="Detalles">
+    <div class="temarios">
+        <div>
+            <h3 class="h3">Temarios</h3>
+            @foreach(var tema in ViewBag.temas)
+            {
+                <ul class="list-group">
+                    <li class="list-group-item active">@tema.Nombre</li>
+                    @foreach(var lecciones in ViewBag.Lecciones)
+                    {
+                        if(tema.TemaId == lecciones.TemaId)
+                        {
+                            <li class="list-group-item">Leccion @(l++): @lecciones.Nombre</li>
+                        }
+                    }
+                </ul>
+                l = 1;
+            }
+        </div>
+    </div>
+    <div class="instructor">
+
+    </div>
+</div>

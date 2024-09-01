@@ -1,0 +1,68 @@
+﻿@model AcademyOnline.Entities.Curso
+@{
+    ViewBag.Title = "Edit";
+    // Model.CategoryId = 0;
+    //Model.BrandId = 0;
+}
+
+<h2>Editar curso</h2>
+
+<div class="row">
+    <div class="col-6">
+        <form action="/Curso/edit" method="post">
+            <h3>ID: @Model.CursoId</h3>
+            <div>
+                <img src="~/Images/Cursos/@Model.ImagePath" width="25%" class="form-group" />
+            </div>
+            <div>
+                <input type="hidden" name="CursoId" value="@Model.CursoId" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="Nombre" class="form-control" value="@Model.Nombre" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="Fecha" class="form-control" value="@Model.Fecha" />
+            </div>
+            <div class="form-group">
+                <label>Categoria</label>
+                @Html.DropDownList("CategoriaId", (SelectList)ViewBag.categories, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Instructor</label>
+                @Html.DropDownList("InstructorId", (SelectList)ViewBag.instructor, new { @class = "form-control" })
+            </div>
+            <!-- <div class="form-group">
+    <input type="file" name="ImagePath" value="" class="form-control" required />
+        </div> -->
+            <div class="form-group">
+                <input type="submit" name="Save" value="Save" class="btn btn-primary" />
+                <a href="/Products/Index" class="btn btn-primary"><i class="fa-solid fa-reply"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="Detalles">
+
+    <div class="temarios">
+        @Html.ActionLink("Editar Temas y lecciones","Edit", "Tema", new { id = Model.CursoId }, new { @class = "btn btn-primary btn-active" })
+        <div>
+            <h3 class="h3">Temarios</h3>
+            @foreach (var tema in ViewBag.temas)
+            {
+                <ul class="list-group">
+                    <li class="list-group-item active">@tema.Nombre</li>
+                    @foreach (var lecciones in ViewBag.Lecciones)
+                    {
+                        if (tema.TemaId == lecciones.TemaId)
+                        {
+                            <li class="list-group-item">Leccion: @lecciones.Nombre</li>
+                        }
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+    <div class="instructor">
+
+    </div>
+</div>

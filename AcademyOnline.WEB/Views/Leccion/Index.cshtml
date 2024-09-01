@@ -1,0 +1,31 @@
+﻿@model List<AcademyOnline.Entities.Leccion>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Lecciones</h3>
+
+<a href="/Leccion/Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i>New</a>
+<table class="table table-striped table-dark">
+    <thead class="thead-dark">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Tema</th>
+    <th>Options</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.LeccionId</td>
+                <td>@item.Nombre</td>
+                <td>@item.TemaId</td>
+                <td>
+                    <a href="/Leccion/Details/@item.LeccionId" class="btn btn-success btn-block"><i class="fa-solid fa-list"></i></a>
+                    <a href="/Leccion/Edit/@item.LeccionId" class="btn btn-primary btn-block"><i class="fa-solid fa-edit"></i></a>
+                    <a href="/Leccion/Delete/@item.LeccionId" class="btn btn-danger btn-block"><i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
